@@ -1,0 +1,86 @@
+{% extends 'map/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.dropdown-toggle {
+  display: inline-block;
+  color: black;
+  border: none;
+  background: none;
+  min-width: 30%;
+  text-align: center;
+}
+.nav-tabs {
+  border-bottom: black 1px solid;
+}
+.nav-link {
+}
+
+#navbarDropdown2::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border:none;
+}
+#navbarDropdown3::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border:none;
+}
+</style>
+
+    <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 3%">
+        <a href=""><img src="{% static 'logo_.png' %}" width="300px;"></a>
+    </div>
+    <div>
+        <ul class="nav nav-tabs justify-content-center" style="width: 100%;">
+            <li class="nav-item dropdown" style="width: 100%; text-align: center">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;border: none; background:none; width: 5%; display: inline-block; ">
+                    3D MAP
+                </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" style="color: black;border: none; background:none; width: 5%; display:inline-block;">
+                    DIRECTIONS
+                </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" style="color: black;border: none; background:none; width: 5%; display: inline-block;">
+                    MAZE TIP
+                </a>
+
+                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style="width: 80%; text-align: center">
+                    <div class="row">
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 1</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 2</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 3</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 4</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 5</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 1</a></li>
+                    </div>
+                    <div class="row">
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 1</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 2</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 3</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 4</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 5</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 1</a></li>
+
+                    </div>
+                    <div class="row">
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 1</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 2</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 3</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 4</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">Item 5</a></li>
+                    </div>
+                </ul>
+
+                </li>
+        </ul>
+    </div>
+{% endblock %}
