@@ -3,7 +3,10 @@
 
 {% block content %}
 <style>
-
+.nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
 a:hover{
     color: #508447;
 }
@@ -16,9 +19,11 @@ div.low{
     color: #b1293e;
 }
 
+
 body{
-    min-width: 30%;
+    min-width: 530px;
 }
+
 .nav-tabs .nav-link {
     border: none;
     background: none;
@@ -37,7 +42,6 @@ body{
 }
 .nav-tabs {
     border: none;
-
 }
 
 #navbarDropdown2::after,
@@ -70,13 +74,13 @@ body{
     <div class="navbar">
         <ul class="nav nav-tabs justify-content-center" style="width: 100%;">
             <li class="nav-item dropdown" style="width: 100%; text-align: center; border: none;">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                     3D MAP
                 </a>
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false"    >
                     DIRECTIONS
                 </a>
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
                     MAZE TIP
                 </a>
 
@@ -109,54 +113,61 @@ body{
             </li>
         </ul>
     </div>
-    <div>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="..." alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    <div class="item">
-      <img src="..." alt="...">
-      <div class="carousel-caption">
-        ...
-      </div>
-    </div>
-    ...
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
-    </div>
+<div>
 
 </body>
+<div id="map" style="width:100%;height:350px;"></div>
+<p><em>마커를 클릭해주세요!</em></p>
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79acd57be8ee7ed205682cc3779496c"></script>
 <script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 마커를 표시할 위치입니다
+var position =  new kakao.maps.LatLng(33.450701, 126.570667);
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+  position: position,
+  clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+});
+
+// 아래 코드는 위의 마커를 생성하는 코드에서 clickable: true 와 같이
+// 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+// marker.setClickable(true);
+
+// 마커를 지도에 표시합니다.
+marker.setMap(map);
+
+// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
+var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+// 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+    content : iwContent,
+    removable : iwRemoveable
+});
+
+// 마커에 클릭이벤트를 등록합니다
+kakao.maps.event.addListener(marker, 'click', function() {
+      // 마커 위에 인포윈도우를 표시합니다
+      infowindow.open(map, marker);
+});
+
     $('.nav-link.dropdown-toggle').on('focus', function() {
       $(this).css('color', '#508447');
     }).on('blur', function() {
       $(this).css('color', '');
     });
+
+
 </script>
 
 {% endblock %}
