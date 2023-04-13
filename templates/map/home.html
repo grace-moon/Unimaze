@@ -3,16 +3,54 @@
 
 {% block content %}
 <style>
+body{
+    min-width: 30%;
+}
+.nav-tabs .nav-link {
+    border: none;
+    background: none;
+    }
+.dropdown-toggle {
+  display: inline-block;
+  color: black;
+  border: none;
+  background: none;
+  min-width: 30%;
+  text-align: center;
+}
+
+.nav-tabs {
+    border: none;
+
+}
+
+#navbarDropdown2::after,
+#navbarDropdown3::after,
+#navbarDropdown1::after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border: none;
+  color: black;
+}
+
+#navbarDropdown1::after {
+
+}
 
 </style>
+<body>
 
     <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 3%">
         <a href=""><img src="{% static 'logo_.png' %}" width="300px;"></a>
     </div>
-    <div>
+    <div class="navbar">
         <ul class="nav nav-tabs justify-content-center" style="width: 100%;">
             <li class="nav-item dropdown" style="width: 100%; text-align: center">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;border: none; background:none; width: 5%; display: inline-block; ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; background:none; width: 5%; display: inline-block; ">
                     3D MAP
                 </a>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" >
@@ -48,8 +86,12 @@
                         <li class="col-sm-4"><a class="dropdown-item" href="#">Item 5</a></li>
                     </div>
                 </ul>
-
-                </li>
+            </li>
         </ul>
     </div>
+
+</body>
+
+
+
 {% endblock %}
