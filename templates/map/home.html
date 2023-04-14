@@ -114,61 +114,155 @@ body{
             </li>
         </ul>
     </div>
+    <div id="map" style="width:100%;height:600px;"></div>
+
+
+
 <div>
 
 </body>
-<div id="map" style="width:100%;height:350px;"></div>
-<p><em>마커를 클릭해주세요!</em></p>
-
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79acd57be8ee7ed205682cc3779496c"></script>
 <script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-    mapOption = {
-        center: new kakao.maps.LatLng(36.33639939410993,  127.46123002158983 ), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
 
-var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-// 마커를 표시할 위치입니다
-var position =  new kakao.maps.LatLng();
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(36.33639939410993,  127.46123002158983), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };
 
-// 마커를 생성합니다
-var marker = new kakao.maps.Marker({
-  position: position,
-  clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
-});
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-// 아래 코드는 위의 마커를 생성하는 코드에서 clickable: true 와 같이
-// 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
-// marker.setClickable(true);
+    // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
+    var positions = [
+        {
+            content: '<div>30주년 기념관</div>',
+            latlng: new kakao.maps.LatLng(36.33611566110516,127.46002541375002)
+        },
+        {
+            content: '<div>공학관</div>',
+            latlng: new kakao.maps.LatLng(36.33332417963411,127.46180220114597)
+        },
+        {
+            content: '<div>공학실험관</div>',
+            latlng: new kakao.maps.LatLng(36.333312597823536,  127.46130092780878)
+        },
+        {
+            content: '<div>국제생활관(제3생활관)</div>',
+            latlng: new kakao.maps.LatLng(36.33780715279762, 127.45838685788743)
+        },
+        {
+            content: '<div>기초과학관</div>',
+            latlng: new kakao.maps.LatLng(36.33284846039782, 127.4613093292189)
+        },
+        {
+            content: '<div>맥센터(렉처홀)</div>',
+            latlng: new kakao.maps.LatLng(36.335998841391, 127.4622746575982)
+        },
+        {
+            content: '<div>맥센터(메인홀)</div>',
+            latlng: new kakao.maps.LatLng(36.33596007906786, 127.46297613924514)
+        },
+        {
+            content: '<div>문무관</div>',
+            latlng: new kakao.maps.LatLng(36.336016545432535, 127.4576746549923)
+        },
+        {
+            content: '<div>산학협력관</div>',
+            latlng: new kakao.maps.LatLng(36.334614695843946, 127.45781124944808)
+        },
+        {
+            content: '<div>융합과학관</div>',
+            latlng: new kakao.maps.LatLng(36.33522662733902, 127.45803759343447)
+        },
+        {
+            content: '<div>응용과학관</div>',
+            latlng: new kakao.maps.LatLng(36.33381080285414, 127.46180507331417)
+        },
+        {
+            content: '<div>인문사회관</div>',
+            latlng: new kakao.maps.LatLng(36.336651239021435, 127.45901497183533)
+        },
+        {
+            content: '<div>입학홍보관</div>',
+            latlng: new kakao.maps.LatLng(36.33451875078942, 127.46283395341769)
+        },
+        {
+            content: '<div>제5생활관-HRC(하모니홀)</div>',
+            latlng: new kakao.maps.LatLng(36.3337343586822,127.46292955487455)
+        },
+            {
+            content: '<div>제5생활관-HRC(하트홀)</div>',
+            latlng: new kakao.maps.LatLng(36.33323868085334, 127.4629377600259)
+        },       {
+            content: '<div>제2생활관</div>',
+            latlng: new kakao.maps.LatLng(36.338237184283706,127.45904655453961)
+        },       {
+            content: '<div>제4생활관</div>',
+            latlng: new kakao.maps.LatLng(36.33706017728725, 127.45812629733736)
+        },       {
+            content: '<div>지산도서관</div>',
+            latlng: new kakao.maps.LatLng(36.33639939410993,127.46123002158983)
+        },       {
+            content: '<div>창학관</div>',
+            latlng: new kakao.maps.LatLng(36.334901973681326, 127.46161102785686)
+        },
+        {
+            content: '<div>학생회관</div>',
+            latlng: new kakao.maps.LatLng(36.334298716648476, 127.46147381230575)
+        },
+        {
+            content: '<div>한의학관</div>',
+            latlng: new kakao.maps.LatLng(36.33538584456335, 127.45881819852357)
+        },    {
+            content: '<div>혜화문화관</div>',
+            latlng: new kakao.maps.LatLng(36.33707036966329,127.46016468871912)
+        },
+        {
+            content: '<div>The 4th Edu-Park</div>',
+            latlng: new kakao.maps.LatLng(36.33623064580255, 127.45824396106813)
+        }
+    ];
 
-// 마커를 지도에 표시합니다.
-marker.setMap(map);
+    var infowindows = [];
 
-// 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
-var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+    for (var i = 0; i < positions.length; i ++) {
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            map: map, // 마커를 표시할 지도
+            position: positions[i].latlng // 마커의 위치
+        });
 
-// 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({
-    content : iwContent,
-    removable : iwRemoveable
-});
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: positions[i].content // 인포윈도우에 표시할 내용
+        });
 
-// 마커에 클릭이벤트를 등록합니다
-kakao.maps.event.addListener(marker, 'click', function() {
-      // 마커 위에 인포윈도우를 표시합니다
-      infowindow.open(map, marker);
-});
+        // 인포윈도우를 infowindows 배열에 추가합니다.
+        infowindows.push(infowindow);
 
-    $('.nav-link.dropdown-toggle').on('focus', function() {
-      $(this).css('color', '#508447');
-    }).on('blur', function() {
-      $(this).css('color', '');
+        // 마커에 클릭 이벤트를 등록합니다
+        kakao.maps.event.addListener(marker, 'click', makeClickListener(map, marker, infowindow));
+    }
+
+    // 인포윈도우를 닫는 클로저를 만드는 함수입니다
+    function makeClickListener(map, marker, infowindow) {
+        return function() {
+            // 모든 인포윈도우를 닫습니다
+            for (var i = 0; i < infowindows.length; i++) {
+                infowindows[i].close();
+            }
+            // 클릭한 마커에 해당하는 인포윈도우를 엽니다
+            infowindow.open(map, marker);
+        };
+    }
+
+    // 지도를 클릭하면 모든 인포윈도우를 닫습니다
+    kakao.maps.event.addListener(map, 'click', function() {
+        for (var i = 0; i < infowindows.length; i++) {
+            infowindows[i].close();
+        }
     });
-
-
-</script>
+    </script>
 
 {% endblock %}
