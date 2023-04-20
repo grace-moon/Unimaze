@@ -38,7 +38,7 @@ class Direcrions_Post(models.Model):
     to_place_num = models.CharField(max_length=20, null=True)
     from_place_name = models.CharField(max_length=20, default="")
     to_place_name = models.CharField(max_length=20, default="")
-    img = models.ImageField(upload_to='media/')
+    img = models.ImageField(upload_to='images/')
     path_name = models.CharField(max_length=20, null=True)
 
     created_date = models.DateTimeField(

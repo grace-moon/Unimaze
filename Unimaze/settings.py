@@ -114,6 +114,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #STATIC_ROOT = BASE_DIR / 'static' 루트는 에러간 난다. 버전 문제인지 확인해봐야 할 듯...
 
 # Default primary key field type

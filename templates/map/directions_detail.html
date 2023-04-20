@@ -10,10 +10,10 @@
     </style>
 </head>
 <body style="width: 70%">
-    <canvas id="myCanvas" width="2129" height="870"></canvas>
+    <canvas id="myCanvas" width="2190px" height="870px"></canvas>
     <script>
         const roads = [
-            {start: {x: 1435, y: 189}, end: {x: 1600, y: 191}, name: "Road B"},
+            {start: {x: 1435, y: 189}, end: {x: 1600, y: 191}, name: "22-1-A-22-post_offic"},
             {start: {x: 1573, y: 185}, end: {x: 1573, y: 130}, name: "Road B"},
             {start: {x: 300, y: 100}, end: {x: 400, y: 200}, name: "Road C"},
             {start: {x: 100, y: 100}, end: {x: 100, y: 300}, name: "Road D"},
@@ -24,7 +24,7 @@
         ];
 
         var img = new Image()
-        img.src = '../static/img/25_1F.png';
+        img.src = '../../static/img/25_1F.png';
         img.onload = function() {
             var canvas = document.getElementById('myCanvas');
             var ctx = canvas.getContext('2d');
@@ -38,9 +38,11 @@
                 ctx.beginPath();
                 ctx.moveTo(startX, startY);
                 ctx.lineTo(endX, endY);
-                ctx.lineWidth = 20;
-                if (roads[i].name === 'Road B') { // 수정된 부분
-                    ctx.strokeStyle = "#FF0000"; // 일치하는 경로는 빨간색으로 표시
+                ctx.lineWidth = 10;
+                if (roads[i].name === '{{ post.path_name }}') { // 수정된 부분
+                    ctx.strokeStyle = "#8f6dc2";
+                    ctx.lineCap = "round";
+                    // 일치하는 경로는 빨간색으로 표시
                 } else {
                     ctx.strokeStyle = "rgba(0, 0, 0, 0)"; // 나머지 경로는 투명색으로 표시
                 }
