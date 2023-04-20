@@ -1,5 +1,4 @@
 from django import forms
-
 from .models import Map_Post
 
 class PostForm(forms.ModelForm):

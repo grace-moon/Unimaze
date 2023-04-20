@@ -29,5 +29,30 @@ class Map_Post(models.Model):
         return self.building_name
 
 
+class Direcrions_Post(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    building_name = models.CharField(max_length=20)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=20, default="")
+    from_place_num = models.IntegerField(default="", null=True)
+    to_place_num = models.IntegerField(default="", null=True)
+    from_place_name = models.CharField(max_length=20, default="")
+    to_place_name = models.CharField(max_length=20, default="")
+    img = models.ImageField(upload_to='media/')
+    path_name = models.CharField(max_length=20, null=True)
+
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.building_name
+
+
 
 
