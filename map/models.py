@@ -7,6 +7,7 @@ class Map_Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.CharField(max_length=50)
+    floor = models.CharField(max_length=20, default="", null=True)
     door_num = models.CharField(max_length=50)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
@@ -26,6 +27,7 @@ class Map_Post(models.Model):
 
     def __str__(self):
         return self.building_name
+
 
 
 
