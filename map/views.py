@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Map_Post
+from .models import Map_Post, Direcrions_Post
 from .forms import PostForm
 from django.utils import timezone
 from django.shortcuts import redirect
@@ -12,6 +12,11 @@ def home(request):
 def post_detail(request, pk):
     post = get_object_or_404(Map_Post, pk=pk)
     return render(request, '../templates/map/post_detail.html', {'post':post})
+
+def direcions_detail(request, pk):
+    post = get_object_or_404(Direcrions_Post, pk=pk)
+    return render(request, '../templates/map/directions_detail.html', {'post':post})
+
 
 def post_new(request):
     if request.method == "POST":
