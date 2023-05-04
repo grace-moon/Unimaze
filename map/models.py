@@ -2,38 +2,30 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
-
-class Map_Post(models.Model):
+#유니메이즈 관련 포스팅, mazetip, aboutus 등등
+class Unimaze_Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
-    vectary_viewer_key = models.CharField(max_length=50, default="")
+    category = models.CharField(max_length=200, default="")
+    title = models.CharField(max_length=200, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
             blank=True, null=True)
 
-    def get_viewer_url(self):
-        # Vectary Viewer API에서 사용할 URL을 생성합니다.
-        viewer_url = f"https://app.vectary.com/p/{self.vectary_viewer_key}"
-        return viewer_url
-
     def publish(self):
         self.published_date = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.building_name
+        return self.title
 
-#길찾기 꿀팁, 정수기 위치 등등
+#길찾기 등등 캔버스 사용.
 class Direcrions_Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.CharField(max_length=20, default="")
+    floor = models.IntegerField(default="", null=True)
     img = models.ImageField(upload_to='images/')
     path_name = models.CharField(max_length=20, null=True)
     created_date = models.DateTimeField(
@@ -74,9 +66,8 @@ class Univ_Contacts(models.Model):
 class TTA(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -101,9 +92,8 @@ class TTA(models.Model):
 class FS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -128,9 +118,8 @@ class FS(models.Model):
 class HC(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -155,9 +144,8 @@ class HC(models.Model):
 class HS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -184,9 +172,8 @@ class HS(models.Model):
 class IAC(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -211,9 +198,8 @@ class IAC(models.Model):
 class TFD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -238,9 +224,8 @@ class TFD(models.Model):
 class MM(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -265,9 +250,8 @@ class MM(models.Model):
 class  TSD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -292,9 +276,8 @@ class  TSD(models.Model):
 class AD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -319,9 +302,8 @@ class AD(models.Model):
 class OM(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -346,9 +328,8 @@ class OM(models.Model):
 class EE(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -373,9 +354,8 @@ class EE(models.Model):
 class JL(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -402,9 +382,8 @@ class JL(models.Model):
 class BS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -430,9 +409,8 @@ class BS(models.Model):
 class EN(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -457,9 +435,8 @@ class EN(models.Model):
 class SH(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -485,9 +462,8 @@ class SH(models.Model):
 class AS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -512,9 +488,8 @@ class AS(models.Model):
 class CH(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -539,9 +514,8 @@ class CH(models.Model):
 class EP(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -566,9 +540,8 @@ class EP(models.Model):
 class TTD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -593,9 +566,8 @@ class TTD(models.Model):
 class MAC_M(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -621,9 +593,8 @@ class MAC_M(models.Model):
 class MAC_L(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
@@ -648,9 +619,8 @@ class MAC_L(models.Model):
 class HRC(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
-    building_num = models.CharField(max_length=50)
-    floor = models.CharField(max_length=20, default="", null=True)
-    door_num = models.CharField(max_length=50)
+    building_num = models.IntegerField(default="", null=True)
+    floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="Door Number를 확인해주세요.")
     created_date = models.DateTimeField(
