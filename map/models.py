@@ -7,7 +7,7 @@ class Unimaze_Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     category = models.CharField(max_length=200, default="")
     title = models.CharField(max_length=200, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -69,7 +69,7 @@ class TTA(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -95,7 +95,7 @@ class FS(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -121,7 +121,7 @@ class HC(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -147,7 +147,7 @@ class HS(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -175,7 +175,7 @@ class IAC(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -201,7 +201,7 @@ class TFD(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -227,7 +227,7 @@ class MM(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -253,7 +253,7 @@ class  TSD(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -279,7 +279,7 @@ class AD(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -305,7 +305,7 @@ class OM(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -331,7 +331,7 @@ class EE(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -357,7 +357,7 @@ class JL(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -385,7 +385,7 @@ class BS(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -412,7 +412,7 @@ class EN(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -438,7 +438,7 @@ class SH(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -465,7 +465,7 @@ class AS(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -491,7 +491,7 @@ class CH(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -517,7 +517,7 @@ class EP(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -543,7 +543,7 @@ class TTD(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -569,7 +569,7 @@ class MAC_M(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -596,7 +596,7 @@ class MAC_L(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
@@ -622,7 +622,7 @@ class HRC(models.Model):
     building_num = models.IntegerField(default="", null=True)
     floor = models.IntegerField(default="", null=True)
     vectary_viewer_key = models.CharField(max_length=50, default="")
-    text = models.TextField(default="Door Number를 확인해주세요.")
+    text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
