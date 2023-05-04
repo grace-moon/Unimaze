@@ -25,7 +25,7 @@ class Direcrions_Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     img = models.ImageField(upload_to='images/')
     path_name = models.CharField(max_length=20, null=True)
     created_date = models.DateTimeField(
@@ -67,7 +67,7 @@ class TTA(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -93,7 +93,7 @@ class FS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -119,7 +119,7 @@ class HC(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -145,7 +145,7 @@ class HS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -173,7 +173,7 @@ class IAC(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -199,7 +199,7 @@ class TFD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -225,7 +225,7 @@ class MM(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -251,7 +251,7 @@ class  TSD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -277,7 +277,7 @@ class AD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -303,7 +303,7 @@ class OM(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -329,7 +329,7 @@ class EE(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -355,7 +355,7 @@ class JL(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -383,7 +383,7 @@ class BS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -410,7 +410,7 @@ class EN(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -436,7 +436,7 @@ class SH(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -463,7 +463,7 @@ class AS(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -489,7 +489,7 @@ class CH(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -515,7 +515,7 @@ class EP(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -541,7 +541,7 @@ class TTD(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -567,7 +567,7 @@ class MAC_M(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -594,7 +594,7 @@ class MAC_L(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
@@ -620,7 +620,7 @@ class HRC(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     building_name = models.CharField(max_length=20)
     building_num = models.IntegerField(default="", null=True)
-    floor = models.IntegerField(default="", null=True)
+    floor = models.CharField(max_length=100, default="")
     vectary_viewer_key = models.CharField(max_length=50, default="")
     text = models.TextField(default="tag를 입력하세요. 각 층에 해당하는 교수님, 업무, 교직원 등등, 모든 걸 다 작성해주세요.")
     created_date = models.DateTimeField(
