@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Unimaze_Post, Direcrions_Post, Univ_Contacts, HRC, MAC_M, TTD, EP, CH, AS, SH, EN, HS, BS, JL, EE, OM, AD, HC, TSD, MM, TTA, TFD, FS, IAC
+from .models import Unimaze_Post, Direcrions_Post, Univ_Contacts, HRC, MAC_L, MAC_M, TTD, EP, CH, AS, SH, EN, HS, BS, JL, EE, OM, AD, HC, TSD, MM, TTA, TFD, FS, IAC
 
 
 class UnimazePostAdmin(admin.ModelAdmin):
@@ -15,6 +15,8 @@ admin.site.register(Direcrions_Post, DirectionsPostAdmin)
 class UnivContactsAdmin(admin.ModelAdmin):
     list_display = ['department', 'name', 'task',]
 admin.site.register(Univ_Contacts, UnivContactsAdmin)
+
+
 
 #3D map admin
 class TTA_Admin(admin.ModelAdmin):
@@ -80,6 +82,31 @@ admin.site.register(SH, SH_Admin)
 class AS_Admin(admin.ModelAdmin):
     list_display = ['building_name', 'floor',]
 admin.site.register(AS, AS_Admin)
+
+class CH_Admin(admin.ModelAdmin):
+    list_display = ['building_name', 'floor',]
+admin.site.register(CH, CH_Admin)
+
+class EP_Admin(admin.ModelAdmin):
+    list_display = ['building_name', 'floor',]
+admin.site.register(EP, EP_Admin)
+
+class TTD_Admin(admin.ModelAdmin):
+    list_display = ['building_name', 'floor',]
+admin.site.register(TTD, TTD_Admin)
+
+class MAC_M_Admin(admin.ModelAdmin):
+    list_display = ['building_name', 'floor',]
+admin.site.register(MAC_M, MAC_M_Admin)
+
+class MAC_L_Admin(admin.ModelAdmin):
+    list_display = ['building_name', 'floor',]
+admin.site.register(MAC_L, MAC_L_Admin)
+
+class HRC_Admin(admin.ModelAdmin):
+    list_display = ['building_name', 'floor',]
+admin.site.register(HRC, HRC_Admin)
+
 
 
 
