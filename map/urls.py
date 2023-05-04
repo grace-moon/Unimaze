@@ -28,5 +28,5 @@ urlpatterns = [
     path('TTA/<int:pk>/', views.TTA, name='TTA_map'),
     path('TFD/<int:pk>/', views.TFD, name='TFD_map'),
     path('FS/<int:pk>/', views.FS, name='FS_map'),
-    path('IA/<int:pk>/', views.IA, name='IA_map'),
+    path('IAC/<int:pk>/', views.IAC, name='IAC_map'),
 ]
