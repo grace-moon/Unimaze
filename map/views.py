@@ -23,119 +23,119 @@ def direcions_detail(request, pk):
 
 def contracts_detail(request, pk):
     contract = get_object_or_404(Univ_Contacts, pk=pk)
-    return render(request, '../templats/map/contracts_detail.html', {'contract':contract})
+    return render(request, '../templates/map/contracts_detail.html', {'contract':contract})
 
 
 #건물별 views
-def HRC(request, pk):
+def HRC_map(request, pk):
     vectary_map = get_object_or_404(HRC, pk=pk)
     map_list = HRC.objects.all()
-    return render(request, '../templates/map/HRC_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/HRC_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def MAC_L(request, pk):
+def MAC_L_map(request, pk):
     vectary_map = get_object_or_404(MAC_L, pk=pk)
     map_list = MAC_L.objects.all()
-    return render(request, '../templates/map/MAC_L_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/MAC_L_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def MAC_M(request, pk):
+def MAC_M_map(request, pk):
     vectary_map = get_object_or_404(MAC_M, pk=pk)
     map_list = MAC_M.objects.all()
-    return render(request, '../templates/map/MAC_M_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/MAC_M_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def TTD(request, pk):
+def TTD_map(request, pk):
     vectary_map = get_object_or_404(TTD, pk=pk)
     map_list = TTD.objects.all()
-    return render(request, '../templates/map/TTD_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/TTD_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def EP(request, pk):
+def EP_map(request, pk):
     vectary_map = get_object_or_404(EP, pk=pk)
     map_list = EP.objects.all()
-    return render(request, '../templates/map/EP_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/EP_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def CH(request, pk):
+def CH_map(request, pk):
     vectary_map = get_object_or_404(CH, pk=pk)
     map_list = CH.objects.all()
-    return render(request, '../templates/map/CH_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/CH_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def AS(request, pk):
+def AS_map(request, pk):
     vectary_map = get_object_or_404(AS, pk=pk)
     map_list = AS.objects.all()
-    return render(request, '../templates/map/AS_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/AS_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def SH(request, pk):
+def SH_map(request, pk):
     vectary_map = get_object_or_404(SH, pk=pk)
     map_list = SH.objects.all()
-    return render(request, '../templates/map/SH_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/SH_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def EN(request, pk):
+def EN_map(request, pk):
     vectary_map = get_object_or_404(EN, pk=pk)
     map_list = EN.objects.all()
-    return render(request, '../templates/map/EN_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/EN_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def HS(request, pk):
+def HS_map(request, pk):
     vectary_map = get_object_or_404(HS, pk=pk)
     map_list = HS.objects.all()
-    return render(request, '../templates/map/HS_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/HS_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def BS(request, pk):
+def BS_map(request, pk):
     vectary_map = get_object_or_404(BS, pk=pk)
     map_list = BS.objects.all()
-    return render(request, '../templates/map/BS_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/BS_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def JL(request, pk):
+def JL_map(request, pk):
     vectary_map = get_object_or_404(JL, pk=pk)
     map_list = JL.objects.all()
-    return render(request, '../templates/map/JL_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/JL_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def EE(request, pk):
+def EE_map(request, pk):
     vectary_map = get_object_or_404(EE, pk=pk)
     map_list = EE.objects.all()
-    return render(request, '../templates/map/EE_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/EE_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def OM(request, pk):
+def OM_map(request, pk):
     vectary_map = get_object_or_404(OM, pk=pk)
     map_list = OM.objects.all()
-    return render(request, '../templates/map/OM_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/OM_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def AD(request, pk):
+def AD_map(request, pk):
     vectary_map = get_object_or_404(AD, pk=pk)
     map_list = AD.objects.all()
-    return render(request, '../templates/map/AD_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/AD_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def HC(request, pk):
+def HC_map(request, pk):
     vectary_map = get_object_or_404(HC, pk=pk)
     map_list = HC.objects.all()
-    return render(request, '../templates/map/HC_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/HC_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def TSD(request, pk):
+def TSD_map(request, pk):
     vectary_map = get_object_or_404(TSD, pk=pk)
     map_list = TSD.objects.all()
-    return render(request, '../templates/map/TSD_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/TSD_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def MM(request, pk):
+def MM_map(request, pk):
     vectary_map = get_object_or_404(MM, pk=pk)
     map_list = MM.objects.all()
-    return render(request, '../templates/map/MM_map_detail.html',{'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/MM_map_detail.html',{'map':vectary_map,'list':map_list})
 
-def TTA(request, pk):
+def TTA_map(request, pk):
     vectary_map = get_object_or_404(TTA, pk=pk)
     map_list = TTA.objects.all()
-    return render(request, '../templates/map/3D_map/TTA_map_detail.html', {'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/TTA_map_detail.html', {'map':vectary_map,'list':map_list})
 
-def TFD(request, pk):
+def TFD_map(request, pk):
     vectary_map = get_object_or_404(TFD, pk=pk)
     map_list = TFD.objects.all()
-    return render(request, '../templates/map/3D_map/TFD_map_detail.html', {'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/TFD_map_detail.html', {'map':vectary_map,'list':map_list})
 
-def FS(request, pk):
+def FS_map(request, pk):
     vectary_map = get_object_or_404(FS, pk=pk)
     map_list = FS.objects.all()
-    return render(request, '../templates/map/3D_map/FS_map_detail.html', {'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/FS_map_detail.html', {'map':vectary_map,'list':map_list})
 
-def IAC(request, pk):
+def IAC_map(request, pk):
     vectary_map = get_object_or_404(IAC, pk=pk)
     map_list = IAC.objects.all()
-    return render(request, '../templates/map/3D_map/IAC_map_detail.html', {'map':vectary_map}, {'list':map_list})
+    return render(request, '../templates/map/IAC_map_detail.html', {'map':vectary_map,'list':map_list})
 
 
 

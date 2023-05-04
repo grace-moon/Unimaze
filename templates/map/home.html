@@ -4,8 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS 파일 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+      <!-- CSS 파일 -->
     <link rel="stylesheet" href="{% static '/css/map.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
@@ -103,7 +103,7 @@
 
                     <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style="width: 80%; text-align: center; margin-left: 10%">
                         <div class="row">
-                            <li class="col-sm-4"><a class="dropdown-item" href="map/1">30주년 기념관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">30주년 기념관</a></li>
                             <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
                             <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
                             <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
@@ -132,7 +132,8 @@
             </ul>
         </div>
 {% block content %}
-        <div id="map" style="width:100%;height:600px;"></div>
+    <div id="map" style="width:100%;height:600px;"></div>
+{% endblock %}
 
     </body>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79acd57be8ee7ed205682cc3779496c"></script>
@@ -278,4 +279,3 @@
             }
         });
         </script>
-{% endblock %}

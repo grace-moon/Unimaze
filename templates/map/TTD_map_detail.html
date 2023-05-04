@@ -1,4 +1,4 @@
-{% extends 'map/home.html' %}
+{% extends '3D_map/home.html' %}
 
 {% block content %}
     <style>
@@ -12,7 +12,7 @@
             <div class="date">
                 {{ list.published_date }}
             </div>
-            <h1><a href="{% url 'EN' pk=post.pk %}">{{ list.floor }}</a></h1>
+            <h1><a href="{% url 'TTD_map' pk=post.pk %}">{{ list.floor }}</a></h1>
         </div>
     {% endfor %}
 
