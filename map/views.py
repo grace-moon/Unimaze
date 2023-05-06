@@ -139,9 +139,15 @@ def IAC_map(request, pk):
 
 
 
-
-
-
+'''
+def result(request):
+    query = request.GET['q']
+    posts = Unimaze_Post, Direcrions_Post, Univ_Contacts, HRC, MAC_L, MAC_M, TTD, EP, CH, AS, SH, EN, HS, BS, JL, EE, OM, AD, HC, TSD, MM, TTA, TFD, FS, IAC
+        Post.objects.filter(title__contains=query) | Post.objects.filter(text__contains=query)
+#    if 'q' in request.GET:
+#        post = post.objects.all().filter(title__contains=query)| Q(description__contains=query)
+    return render(request, 'blog/result.html', {'posts':posts})
+'''
 
 
 
