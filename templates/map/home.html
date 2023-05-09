@@ -84,12 +84,11 @@
     }
     </style>
     <body>
-
-        <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 3%">
+        <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 1%">
             <a href="{% url 'home' %}"><img src="{% static 'logo_.png' %}" width="300px;"></a>
         </div>
         <div class="navbar">
-            <ul class="nav nav-tabs justify-content-center" style="width: 100%;">
+            <ul class="nav nav-tabs justify-content-center" style="width: 100%; margin-bottom: 1%;">
                 <li class="nav-item dropdown" style="width: 100%; text-align: center; border: none;">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                         3D MAP
@@ -151,7 +150,7 @@
         // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
         var positions = [
             {
-                content: '<div>30주년 기념관</div>',
+                content: '<div style="padding: 5px;"><a href="#" style="color: black">30주년 기념관</a></div>',
                 latlng: new kakao.maps.LatLng(36.33611566110516,127.46002541375002)
             },
             {
