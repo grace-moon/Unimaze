@@ -17,6 +17,10 @@ def post_detail(request, pk):
     post = get_object_or_404(Unimaze_Post, pk=pk)
     return render(request, '../templates/map/post_detail.html', {'post':post})
 
+
+
+
+
 def direcions_detail(request, pk):
     post = get_object_or_404(Direcrions_Post, pk=pk)
     return render(request, '../templates/map/directions_detail.html', {'post':post})
@@ -119,7 +123,7 @@ def MM_map(request, pk):
 
 def TTA_map(request, pk):
     vectary_map = get_object_or_404(TTA, pk=pk)
-    map_list = TTA.objects.all().order_by('floor')
+    map_list = TTA.objects.all().order_by('published_date')
     return render(request, '../templates/map/TTA_map_detail.html', {'map':vectary_map,'list':map_list})
 
 def TFD_map(request, pk):
