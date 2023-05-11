@@ -29,112 +29,112 @@ def contracts_detail(request, pk):
 #건물별 views
 def HRC_map(request, pk):
     vectary_map = get_object_or_404(HRC, pk=pk)
-    map_list = HRC.objects.all()
+    map_list = HRC.objects.all().order_by('floor')
     return render(request, '../templates/map/HRC_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def MAC_L_map(request, pk):
     vectary_map = get_object_or_404(MAC_L, pk=pk)
-    map_list = MAC_L.objects.all()
+    map_list = MAC_L.objects.all().order_by('floor')
     return render(request, '../templates/map/MAC_L_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def MAC_M_map(request, pk):
     vectary_map = get_object_or_404(MAC_M, pk=pk)
-    map_list = MAC_M.objects.all()
+    map_list = MAC_M.objects.all().order_by('floor')
     return render(request, '../templates/map/MAC_M_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def TTD_map(request, pk):
     vectary_map = get_object_or_404(TTD, pk=pk)
-    map_list = TTD.objects.all()
+    map_list = TTD.objects.all().order_by('floor')
     return render(request, '../templates/map/TTD_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def EP_map(request, pk):
     vectary_map = get_object_or_404(EP, pk=pk)
-    map_list = EP.objects.all()
+    map_list = EP.objects.all().order_by('floor')
     return render(request, '../templates/map/EP_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def CH_map(request, pk):
     vectary_map = get_object_or_404(CH, pk=pk)
-    map_list = CH.objects.all()
+    map_list = CH.objects.all().order_by('floor')
     return render(request, '../templates/map/CH_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def AS_map(request, pk):
     vectary_map = get_object_or_404(AS, pk=pk)
-    map_list = AS.objects.all()
+    map_list = AS.objects.all().order_by('floor')
     return render(request, '../templates/map/AS_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def SH_map(request, pk):
     vectary_map = get_object_or_404(SH, pk=pk)
-    map_list = SH.objects.all()
+    map_list = SH.objects.all().order_by('floor')
     return render(request, '../templates/map/SH_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def EN_map(request, pk):
     vectary_map = get_object_or_404(EN, pk=pk)
-    map_list = EN.objects.all()
+    map_list = EN.objects.all().order_by('floor')
     return render(request, '../templates/map/EN_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def HS_map(request, pk):
     vectary_map = get_object_or_404(HS, pk=pk)
-    map_list = HS.objects.all()
+    map_list = HS.objects.all().order_by('floor')
     return render(request, '../templates/map/HS_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def BS_map(request, pk):
     vectary_map = get_object_or_404(BS, pk=pk)
-    map_list = BS.objects.all()
+    map_list = BS.objects.all().order_by('floor')
     return render(request, '../templates/map/BS_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def JL_map(request, pk):
     vectary_map = get_object_or_404(JL, pk=pk)
-    map_list = JL.objects.all()
+    map_list = JL.objects.all().order_by('floor')
     return render(request, '../templates/map/JL_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def EE_map(request, pk):
     vectary_map = get_object_or_404(EE, pk=pk)
-    map_list = EE.objects.all()
+    map_list = EE.objects.all().order_by('floor')
     return render(request, '../templates/map/EE_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def OM_map(request, pk):
     vectary_map = get_object_or_404(OM, pk=pk)
-    map_list = OM.objects.all()
+    map_list = OM.objects.all().order_by('floor')
     return render(request, '../templates/map/OM_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def AD_map(request, pk):
     vectary_map = get_object_or_404(AD, pk=pk)
-    map_list = AD.objects.all()
+    map_list = AD.objects.all().order_by('floor')
     return render(request, '../templates/map/AD_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def HC_map(request, pk):
     vectary_map = get_object_or_404(HC, pk=pk)
-    map_list = HC.objects.all()
+    map_list = HC.objects.all().order_by('floor')
     return render(request, '../templates/map/HC_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def TSD_map(request, pk):
     vectary_map = get_object_or_404(TSD, pk=pk)
-    map_list = TSD.objects.all()
+    map_list = TSD.objects.all().order_by('floor')
     return render(request, '../templates/map/TSD_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def MM_map(request, pk):
     vectary_map = get_object_or_404(MM, pk=pk)
-    map_list = MM.objects.all()
+    map_list = MM.objects.all().order_by('floor')
     return render(request, '../templates/map/MM_map_detail.html',{'map':vectary_map,'list':map_list})
 
 def TTA_map(request, pk):
     vectary_map = get_object_or_404(TTA, pk=pk)
-    map_list = TTA.objects.all()
+    map_list = TTA.objects.all().order_by('floor')
     return render(request, '../templates/map/TTA_map_detail.html', {'map':vectary_map,'list':map_list})
 
 def TFD_map(request, pk):
     vectary_map = get_object_or_404(TFD, pk=pk)
-    map_list = TFD.objects.all()
+    map_list = TFD.objects.all().order_by('floor')
     return render(request, '../templates/map/TFD_map_detail.html', {'map':vectary_map,'list':map_list})
 
 def FS_map(request, pk):
     vectary_map = get_object_or_404(FS, pk=pk)
-    map_list = FS.objects.all()
+    map_list = FS.objects.all().order_by('floor')
     return render(request, '../templates/map/FS_map_detail.html', {'map':vectary_map,'list':map_list})
 
 def IAC_map(request, pk):
     vectary_map = get_object_or_404(IAC, pk=pk)
-    map_list = IAC.objects.all()
+    map_list = IAC.objects.all().order_by('floor')
     return render(request, '../templates/map/IAC_map_detail.html', {'map':vectary_map,'list':map_list})
 
 
