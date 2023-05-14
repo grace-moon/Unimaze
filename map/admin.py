@@ -14,6 +14,6 @@ admin.site.register(Univ_Contacts, UnivContactsAdmin)
 
 #3D map admin
 class Map_Admin(admin.ModelAdmin):
-    list_display = ['building_name', 'floor',]
+    list_display = ['id','building_name', 'floor',]
 admin.site.register(Unimaze_map, Map_Admin)
 

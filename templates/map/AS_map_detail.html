@@ -1,0 +1,29 @@
+{% extends 'map/home.html' %}
+
+{% block content %}
+    <style>
+    .post-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    </style>
+
+    <div class="post" style="text-align: center;">
+        <h2><b>{{ map.building_name }} {{ map.floor }}</b></h2>
+        <p><b>{{ map.building_num}} 호관</b>
+    <div class="post-container">
+        {% for map in list %}
+            <div class="post" style="margin-left: 1%; margin-right: 1%">
+                <h5><a href="{% url 'AS_map_detail' pk=map.pk %}" style="color: #508447;" ><b>{{ map.floor }}</b></a></h5>
+            </div>
+        {% endfor %}
+    </div>
+
+    </div>
+    <div style="width: 80%; margin: auto 10% auto 10%;">
+        <iframe src="{{ map.get_viewer_url }}" width="100%" height="500px" style="border: none; border-top: solid black 1px; border-bottom: solid black 1px; "></iframe>
+    </div>
+
+{% endblock %}
+
