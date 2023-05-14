@@ -1,0 +1,16 @@
+{% extends 'map/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}"style="color: #000000;">{{ post.title }}</a></h1>
+            <div class="lineover">
+            	<p>{{ post.text|linebreaksbr }}</p>
+            </div>
+
+        </div>
+		{% empty %}
+			    0 result found.
+	{% endfor %}
+
+{% endblock %}
