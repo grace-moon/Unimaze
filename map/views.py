@@ -71,27 +71,27 @@ def	 BS_map(request, pk):
     map_list = Unimaze_map.objects.filter(building_num=7).order_by('published_date')
     return render(request, '../templates/map/BS_map_detail.html',{'map':vectary_map, 'list':map_list})
 
-def	 JL_map(request, pk):
+def	JL_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=10).order_by('published_date')
     return render(request, '../templates/map/JL_map_detail.html',{'map':vectary_map, 'list':map_list})
 
-def	 EE_map(request, pk):
+def EE_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=11).order_by('published_date')
     return render(request, '../templates/map/EE_map_detail.html',{'map':vectary_map, 'list':map_list})
 
-def	 OM_map(request, pk):
+def	OM_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=12).order_by('published_date')
-    return render(request, '../templates/map/OM_map_detail.html',{'map':vectary_map, 'list':map_list})
+    return render(request, '../templates/map/OM_map_detail.html', {'map':vectary_map, 'list':map_list})
 
-def	 AD_map(request, pk):
+def	AD_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=14).order_by('published_date')
     return render(request, '../templates/map/AD_map_detail.html',{'map':vectary_map, 'list':map_list})
 
-def	 HC_map(request, pk):
+def	HC_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=15).order_by('published_date')
     return render(request, '../templates/map/HC_map_detail.html',{'map':vectary_map, 'list':map_list})
@@ -116,7 +116,7 @@ def	TFD_map(request, pk):
     map_list = Unimaze_map.objects.filter(building_num=23).order_by('published_date')
     return render(request, '../templates/map/TFD_map_detail.html',{'map':vectary_map, 'list':map_list})
 
-def	 FS_map(request, pk):
+def	FS_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=24).order_by('published_date')
     return render(request, '../templates/map/FS_map_detail.html',{'map':vectary_map, 'list':map_list})

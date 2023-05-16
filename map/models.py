@@ -29,7 +29,7 @@ class Univ_Contacts(models.Model):
     department = models.CharField(max_length=20)
     name = models.CharField(max_length=20)
     task = models.CharField(max_length=200, null=True)
-    contact = models.IntegerField(default="042", null=True )
+    contact = models.CharField(max_length=20, default='042-280' )
     location = models.CharField(max_length=200, null=True)
     created_date = models.DateTimeField(
             default=timezone.now)

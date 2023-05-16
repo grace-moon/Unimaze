@@ -1,7 +1,7 @@
 {% extends 'map/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
+    {% for map in list %}
         <div class="post">
             <h1><a href="{% url 'post_detail' pk=post.pk %}"style="color: #000000;">{{ post.title }}</a></h1>
             <div class="lineover">
