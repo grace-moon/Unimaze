@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +19,7 @@
         import { VctrApi } from "https://www.vectary.com/viewer-api/v1/api.js";
         // Your Viewer API magic here
     </script>
+
   </head>
     <style>
     .nav-link {
@@ -27,9 +29,7 @@
     a:hover{
         color: #508447;
     }
-    div.low{
-        height: fit-content;
-    }
+
     .dropdown-item:hover {
         font-weight: bold;
         background: none;
@@ -38,7 +38,8 @@
 
 
     body{
-        min-width: 530px;
+        min-width: 900px;
+        width: 100%;
     }
 
     .nav-tabs .nav-link {
@@ -54,9 +55,7 @@
       text-align: center;
     }
 
-    .navbar .nav-link:focus {
-      color: #508447;
-    }
+
     .nav-tabs {
         border: none;
     }
@@ -72,10 +71,12 @@
         vertical-align: 0.255em;
         content: "";
         border: none;
-        color: black;
 
     }
+    .form-control:focus {
 
+        box-shadow: none;
+    }
 
     #navbarDropdown4,
     #navbarDropdown2,
@@ -84,81 +85,96 @@
         font-size: 25px;
         font-weight: bold;
         font-family: 'IBM Plex Sans KR', bold;
+
     }
     </style>
-    <body>
-        <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 1%">
-            <a href="{% url 'home' %}"><img src="{% static 'logo_.png' %}" width="300px;"></a>
-        </div>
-<div style="display: flex; justify-content: center;">
-    <form class="form-inline" style="width:30%; display: inline-block; padding: 5px;">
-        <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-            </svg>
-        </button>
-    </form>
+
+<body>
+    <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 1%">
+        <a href="{% url 'home' %}"><img src="{% static 'logo_.png' %}" width="300px;"></a>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <form class="form-inline" style="width:30%; display: inline-flex; padding: 5px; min-width: 400px">
+            <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+            </button>
+        </form>
+    </div>
+
+
+
+    <div class="navbar">
+        <ul class="nav nav-tabs justify-content-center" style=" width: 100%">
+            <li class="nav-item dropdown" style="text-align: center; border: none; width: 20%; margin-left: 10%; display: inline-flex">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
+                    3D MAP
+                </a>
+                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 400%; text-align: center; border-radius: 60rem; border: black solid 2px; min-width: 800px; margin-left: -20% ">
+                    <div class="row">
+                        <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">공학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">공학실험관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">문무관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">산학협력관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">응용과학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">인문사회관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">제2생활관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">제4생활관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">지산도서관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">창학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">학생회관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">혜화문화관</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" style="width: 20%; text-align: center; border: none; display: inline-flex">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
+                    CONTACTS
+                </a>
+                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style="width: 80%; text-align: center; margin-left: 10%; border-radius: 60rem; border: black solid 2px; padding: 1%">
+                    <div class="row">
+                        <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">qncj</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
+                        <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
+                        <!-- 다른 항목들 추가 -->
+                    </div>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" style="width: 20%; text-align: center; border: none; display: inline-flex">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                    MAZE TIP
+                </a>
+                <!-- MAZE TIP 드롭다운 메뉴 -->
+            </li>
+            <li class="nav-item dropdown" style="width: 20%; margin-le: 10%; text-align: center; border: none; display: inline-flex">
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                    ABOUT US
+                </a>
+                <!-- ABOUT US 드롭다운 메뉴 -->
+            </li>
+        </ul>
 </div>
 
-<style>
-    .form-control:focus {
-
-        box-shadow: none;
-    }
-</style>
-
-
-        <div class="navbar">
-            <ul class="nav nav-tabs justify-content-center" style="width: 100%; margin-bottom: 1%;">
-                <li class="nav-item dropdown" style="width: 100%; text-align: center; border: none;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                        3D MAP
-                    </a>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false"    >
-                        CONTACTS
-                    </a>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                        MAZE TIP
-                    </a>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                        ABOUT US
-                    </a>
-                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style="width: 80%; text-align: center; margin-left: 10%">
-                        <div class="row">
-                            <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">공학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">공학실험관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">문무관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">산학협력관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">응용과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">인문사회관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">제2생활관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">제4생활관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">지산도서관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">창학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">학생회관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">혜화문화관</a></li>
-                        </div>
-                    </ul>
-                </li>
-            </ul>
-        </div>
 {% block content %}
-    <div id="map" style="width:100%;height:600px;"></div>
+<div id="map" style="width:100%;height:600px;"></div>
 {% endblock %}
 
-    </body>
+</body>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79acd57be8ee7ed205682cc3779496c"></script>
     <script>
 
