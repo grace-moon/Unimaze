@@ -111,7 +111,9 @@ def	 MM_map(request, pk):
 def	TTA_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map, pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=22).order_by('published_date')
-    return render(request, '../templates/map/TTA_map_detail.html',{'map':vectary_map, 'list':map_list})
+    post_map = Unimaze_map.objects.all()
+    post_con = Univ_Contacts.objects.all()
+    return render(request, '../templates/map/TTA_map_detail.html',{'map':vectary_map, 'list':map_list, 'post_map':post_map, 'post_con':post_con})
 
 def	TFD_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)

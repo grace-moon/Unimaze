@@ -30,10 +30,14 @@
   <!-- 나머지 HTML 내용 -->
 </html>
     <style>
+    .offcanvas-backdrop.fade{
+        display: none;
+    }
 
       #postList li {
         display: none;
       }
+
     .nav-link {
         display: inline-block;
         padding: 0.5rem 1rem;
@@ -42,13 +46,20 @@
         color: #508447;
     }
 
+.nav-link:focus, .nav-link:hover {
+    color: #508447;
+}
+    a.nav-link:active{
+    color: mediumpurple;
+}
     .dropdown-item:hover {
         font-weight: bold;
         background: none;
         color: #b1293e;
     }
-
-
+    #readMoreButton {
+      border: none;
+    }
     body{
         min-width: 900px;
         width: 100%
@@ -91,21 +102,39 @@
         vertical-align: 0.255em;
         content: "";
         border: none;
+
     }
     .form-control:focus {
 
         box-shadow: none;
     }
 
-    #navbarDropdown4,
-    #navbarDropdown2,
-    #navbarDropdown3,
-    #navbarDropdown1 {
+
+.dropdown-toggle {
         font-size: 25px;
         font-weight: bold;
         font-family: 'IBM Plex Sans KR', bold;
 
     }
+.offcanvas-backdrop fade show:focus{
+    display: none;
+}
+
+
+
+.search-post a{
+    margin : auto 2% auto 2%  ;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'IBM Plex Sans KR';
+    color: black;
+    text-decoration: black;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.1rem rgba(0, 0, 0, 0.3);
+}
+
 .bg-light {
     background-color: #FFFFFF!important;
     display: inline-block;
@@ -128,175 +157,165 @@
                 <img src="{% static 'logo_.png' %}" width="300px;">
             </a>
         </div>
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid d-flex justify-content-end ">
-            <div class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-top: 3%; margin-bottom: 1%; border: none; margin-right: auto; margin-left: auto">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
-                    CONTACTS
-                </a>
-            </d>
-        </div>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid d-flex justify-content-end ">
+            <ul class="nav nav-tabs justify-content-center" style=" width: 100%; margin-left: 10%; margin-right: 10%">
+                <li class="navbar-toggler"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style=" margin-bottom: 1%; border: none; margin-right: auto; margin-left: auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
+                        CONTACTS
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                    <form class="form-inline" style="width:100%; display: inline-flex; padding: 5px; margin: 2%">
-                        <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                            </svg>
-                        </button>
+                </li>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Contacts Search</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="width: 30px; height: 30px" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <form class="form-inline" style="width: 100%; display: inline-flex; justify-content: center; text-align: center;">
+                        <input type="text" id="searchInput" class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 90%; border:none; outline: none; border-radius: 0rem; border-bottom: 2px solid darkgreen;">
+                            <p class="my-2 my-sm-0" type="" style="border: none; color: black;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 20 20" style="color: darkgreen">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </p>                    <ul id="postList" class="search-post" style="width: 100%; padding: 3%;">
+                          {% for com in post_con %}
+                              <li style="border-bottom: black dashed 2px; margin-bottom: 2%"><a href="#">{{ com.location }}</a><br>
+                                  <a href="#">{{ com.department }}</a><br>
+                                  <a href="#">{{ com.name }}</a><br>
+                                  <a href="#">{{ com.contact }}</a></br>
+                                  <p style="font-size: 15px">{{com.task}}</p></a>
+                              </li>
+                          {% endfor %}
+                        </ul>
                     </form>
-              </div>
-            </div>
-          </div>
-        </nav>
-    </div>
-
-
-
-
-
-
-
-
-
-    <div class="navbar">
-        <ul class="nav nav-tabs justify-content-center" style=" width: 100%; margin-left: 10%; margin-right: 10%">
-            <li class="nav-item dropdown" style="text-align: center; border: none; display: inline-flex;  margin-left: auto; margin-right: auto;">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
-                    3D MAP
-                </a>
-                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center; border-radius: 60rem; border: black solid 2px; min-width: 800px; ">
-                    <div class="row" style="margin-left: auto; margin-right: auto">
-                        <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">공학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">공학실험관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">문무관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">산학협력관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">응용과학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">인문사회관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">제2생활관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">제4생활관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">지산도서관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">창학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">학생회관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">혜화문화관</a></li>
-                    </div>
-                </ul>
-            </li>
-            <li class="nav-item dropdown" style="margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
-                    CONTACTS
-                </a>
-                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style=" text-align: center; border-radius: 60rem; border: black solid 2px; padding: 1%">
-                    <div class="row">
-                        <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">qncj</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
-                        <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
-                        <!-- 다른 항목들 추가 -->
-                    </div>
-                </ul>
-            </li>
-            <li class="nav-item dropdown" style="margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
-
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                    MAZE TIP
-                </a>
-                <!-- ABOUT US 드롭다운 메뉴 -->
-            </li>
-            <li class="nav-item dropdown" style="    margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
-
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                    ABOUT US
-                </a>
-                <!-- ABOUT US 드롭다운 메뉴 -->
-            </li>
-            <li class="">
-                <div style=" margin-left: auto; margin-right: auto; justify-content: center;">
-                    <form class="form-inline" style="width:30%; display: inline-flex; padding: 5px; min-width: 400px">
-                        <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                            </svg>
-                        </button>
-                    </form>
+                  </div>
                 </div>
-            </li>
+                <li class="nav-item dropdown" style="text-align: center; border: none; display: inline-flex;  margin-left: auto; margin-right: auto;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
+                        3D MAP
+                    </a>
+                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center; border-radius: 60rem; border: black solid 2px;">
+                        <div class="row" style="margin-left: auto; margin-right: auto">
+                            <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">공학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">공학실험관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">문무관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">산학협력관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">응용과학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">인문사회관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">제2생활관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">제4생활관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">지산도서관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">창학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">학생회관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
+                            <li class="col-sm-4"><a class="dropdown-item" href="#">혜화문화관</a></li>
+                        </div>
+                    </ul>
+                </li>
 
-        </ul>
-    </div>
+                <li class="nav-item dropdown" style="margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
 
-<ul id="postList">
-  {% for com in post_con %}
-    <li>{{ com.name }}</li>
-  {% endfor %}
-</ul>
-<script>
-  const searchInput = document.getElementById('searchInput');
-  const postList = document.getElementById('postList').getElementsByTagName('li');
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                        MAZE TIP
+                    </a>
+                    <!-- ABOUT US 드롭다운 메뉴 -->
+                </li>
+                <li class="nav-item dropdown" style="    margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
 
-  searchInput.addEventListener('input', function() {
-    const keyword = searchInput.value.toLowerCase();
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                        ABOUT US
+                    </a>
+                    <!-- ABOUT US 드롭다운 메뉴 -->
+                </li>
+                <li class="nav-item dropdown">
+                    <div style=" margin-left: auto; margin-right: auto; justify-content: center;">
+                        <form class="form-inline" style="width:30%; display: inline-flex; padding: 5px; min-width: 400px">
+                            <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </li>
 
-    Array.from(postList).forEach(function(post) {
-      const content = post.textContent.toLowerCase();
-      if (content.includes(keyword)) {
-        post.style.display = 'block';
-      } else {
-        post.style.display = 'none';
-      }
-    });
-  });
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+        <div id="map" style="width:100%;height:600px;"></div>
+    {% endblock %}
+        <script>
+        const backdrop = document.querySelector('.offcanvas-backdrop.fade.show');
+            backdrop.parentNode.removeChild(backdrop);
 
-  searchInput.addEventListener('focusout', function() {
-    Array.from(postList).forEach(function(post) {
-      post.style.display = 'none';
-    });
-  });
-</script>
+        </script>
+
+    <script>
+      const searchInput = document.getElementById('searchInput');
+      const postList = document.getElementById('postList').getElementsByTagName('li');
+      let previousKeyword = '';
+
+      searchInput.addEventListener('input', function() {
+        const keyword = searchInput.value.toLowerCase();
+
+        Array.from(postList).forEach(function(post) {
+          const content = post.textContent.toLowerCase();
+          if (content.includes(keyword)) {
+            post.style.display = 'block';
+          } else {
+            post.style.display = 'none';
+          }
+        });
+
+        previousKeyword = keyword;
+      });
+
+
+      searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // 기본 동작인 폼 제출 방지
+          event.stopPropagation(); // 이벤트 전파 중지
+        }
+      });
+
+      searchInput.addEventListener('focusin', function() {
+        searchInput.value = previousKeyword;
+      });
+    </script>
+
+    <script>
+      const taskContent = document.getElementById('taskContent');
+      const readMoreButton = document.getElementById('readMoreButton');
+      let isContentVisible = false;
+
+      readMoreButton.addEventListener('click', function() {
+        if (isContentVisible) {
+          taskContent.style.display = 'none';
+          readMoreButton.textContent = '담당업무';
+        } else {
+          taskContent.style.display = 'block';
+          readMoreButton.textContent = '접기';
+        }
+
+        isContentVisible = !isContentVisible;
+      });
+    </script>
 
 
 
-{% block content %}
-<div id="map" style="width:100%;height:600px;"></div>
-{% endblock %}
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
