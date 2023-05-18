@@ -9,8 +9,13 @@
       <!-- CSS 파일 -->
     <link rel="stylesheet" href="{% static '/css/map.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/css/autoComplete.min.css">
     <!-- JS 파일 (jQuery와 Popper.js도 함께 포함) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -21,12 +26,19 @@
     </script>
 
   </head>
+
+  <!-- 나머지 HTML 내용 -->
+</html>
     <style>
+
+      #postList li {
+        display: none;
+      }
     .nav-link {
         display: inline-block;
         padding: 0.5rem 1rem;
     }
-    a:hover{
+    .dropdown-toggle:hover{
         color: #508447;
     }
 
@@ -39,7 +51,15 @@
 
     body{
         min-width: 900px;
-        width: 100%;
+        width: 100%
+        margin: 0;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: center;
+        background-color: #fff;
     }
 
     .nav-tabs .nav-link {
@@ -71,7 +91,6 @@
         vertical-align: 0.255em;
         content: "";
         border: none;
-
     }
     .form-control:focus {
 
@@ -87,33 +106,93 @@
         font-family: 'IBM Plex Sans KR', bold;
 
     }
+.bg-light {
+    background-color: #FFFFFF!important;
+    display: inline-block;
+}
+
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background:none
+}
     </style>
 
 <body>
-    <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 1%">
-        <a href="{% url 'home' %}"><img src="{% static 'logo_.png' %}" width="300px;"></a>
+        <div id="logo_img" style="text-align: center; margin-top: 3%; margin-bottom: 1%; width: 100%;">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'logo_.png' %}" width="300px;">
+            </a>
+        </div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-end ">
+            <div class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-top: 3%; margin-bottom: 1%; border: none; margin-right: auto; margin-left: auto">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
+                    CONTACTS
+                </a>
+            </d>
+        </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                    <form class="form-inline" style="width:100%; display: inline-flex; padding: 5px; margin: 2%">
+                        <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </nav>
     </div>
-    <div style="display: flex; justify-content: center;">
-        <form class="form-inline" style="width:30%; display: inline-flex; padding: 5px; min-width: 400px">
-            <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </button>
-        </form>
-    </div>
+
+
+
+
+
+
 
 
 
     <div class="navbar">
-        <ul class="nav nav-tabs justify-content-center" style=" width: 100%">
-            <li class="nav-item dropdown" style="text-align: center; border: none; width: 20%; margin-left: 10%; display: inline-flex">
+        <ul class="nav nav-tabs justify-content-center" style=" width: 100%; margin-left: 10%; margin-right: 10%">
+            <li class="nav-item dropdown" style="text-align: center; border: none; display: inline-flex;  margin-left: auto; margin-right: auto;">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
                     3D MAP
                 </a>
-                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 400%; text-align: center; border-radius: 60rem; border: black solid 2px; min-width: 800px; margin-left: -20% ">
-                    <div class="row">
+                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center; border-radius: 60rem; border: black solid 2px; min-width: 800px; ">
+                    <div class="row" style="margin-left: auto; margin-right: auto">
                         <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
                         <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
                         <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
@@ -140,11 +219,11 @@
                     </div>
                 </ul>
             </li>
-            <li class="nav-item dropdown" style="width: 20%; text-align: center; border: none; display: inline-flex">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
+            <li class="nav-item dropdown" style="margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
                     CONTACTS
                 </a>
-                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style="width: 80%; text-align: center; margin-left: 10%; border-radius: 60rem; border: black solid 2px; padding: 1%">
+                <ul class="dropdown-menu row" aria-labelledby="navbarDropdown" style=" text-align: center; border-radius: 60rem; border: black solid 2px; padding: 1%">
                     <div class="row">
                         <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">qncj</a></li>
                         <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
@@ -154,27 +233,73 @@
                     </div>
                 </ul>
             </li>
-            <li class="nav-item dropdown" style="width: 20%; text-align: center; border: none; display: inline-flex">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown" style="margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
                     MAZE TIP
                 </a>
-                <!-- MAZE TIP 드롭다운 메뉴 -->
+                <!-- ABOUT US 드롭다운 메뉴 -->
             </li>
-            <li class="nav-item dropdown" style="width: 20%; margin-le: 10%; text-align: center; border: none; display: inline-flex">
+            <li class="nav-item dropdown" style="    margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
 
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false">
                     ABOUT US
                 </a>
                 <!-- ABOUT US 드롭다운 메뉴 -->
             </li>
+            <li class="">
+                <div style=" margin-left: auto; margin-right: auto; justify-content: center;">
+                    <form class="form-inline" style="width:30%; display: inline-flex; padding: 5px; min-width: 400px">
+                        <input class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 80%; margin-left: 5%; border:none; border-radius: 0px; outline: none; border-bottom: 2px solid black;">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="border: none; color: black;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </li>
+
         </ul>
-</div>
+    </div>
+
+<ul id="postList">
+  {% for com in post_con %}
+    <li>{{ com.name }}</li>
+  {% endfor %}
+</ul>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const postList = document.getElementById('postList').getElementsByTagName('li');
+
+  searchInput.addEventListener('input', function() {
+    const keyword = searchInput.value.toLowerCase();
+
+    Array.from(postList).forEach(function(post) {
+      const content = post.textContent.toLowerCase();
+      if (content.includes(keyword)) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  });
+
+  searchInput.addEventListener('focusout', function() {
+    Array.from(postList).forEach(function(post) {
+      post.style.display = 'none';
+    });
+  });
+</script>
+
+
 
 {% block content %}
 <div id="map" style="width:100%;height:600px;"></div>
 {% endblock %}
 
-</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c79acd57be8ee7ed205682cc3779496c"></script>
     <script>
 
@@ -340,3 +465,4 @@
             }
         });
         </script>
+</body>

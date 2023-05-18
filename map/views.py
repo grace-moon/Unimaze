@@ -9,7 +9,9 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def home(request):
-    return render(request, '../templates/map/home.html', {})
+    post_map = Unimaze_map.objects.all()
+    post_con = Univ_Contacts.objects.all()
+    return render(request, '../templates/map/home.html', {'post_map':post_map, 'post_con':post_con})
 
 
 def contacts_detail(request, pk):
