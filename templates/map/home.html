@@ -49,9 +49,7 @@
 .nav-link:focus, .nav-link:hover {
     color: #508447;
 }
-    a.nav-link:active{
-    color: mediumpurple;
-}
+
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     text-align: center;
     color: #b1293e;
@@ -219,7 +217,7 @@
                                 </svg>
                             </p>                    <ul id="postList" class="search-post" style="width: 100%; padding: 3%;">
                           {% for com in post_con %}
-                              <li style="border-bottom: black dashed 2px; margin-bottom: 2%">
+                              <li style="border-bottom: darkgreen dashed 2px; margin-bottom: 2%">
                                   {% if com.location %}
                                     <a href="#">{{ com.location }}</a><br>
                                   {% endif %}
@@ -287,10 +285,10 @@
       let previousKeyword = '';
 
       searchInput.addEventListener('input', function() {
-        const keyword = searchInput.value.toLowerCase();
+        const keyword = searchInput.value.toLowerCase().replace(/\s/g, '');
 
         Array.from(postList).forEach(function(post) {
-          const content = post.textContent.toLowerCase();
+          const content = post.textContent.toLowerCase().replace(/\s/g, '');
           if (content.includes(keyword)) {
             post.style.display = 'block';
           } else {
