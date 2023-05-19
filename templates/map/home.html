@@ -52,6 +52,13 @@
     a.nav-link:active{
     color: mediumpurple;
 }
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    text-align: center;
+    color: #b1293e;
+    background-color: #fff;
+
+
+}
     .dropdown-item:hover {
         font-weight: bold;
         background: none;
@@ -77,14 +84,7 @@
         border: none;
         background: none;
         }
-    .dropdown-toggle {
-      display: inline-block;
-      color: black;
-      border: none;
-      background: none;
-      min-width: 20%;
-      text-align: center;
-    }
+
 
 
     .nav-tabs {
@@ -109,13 +109,16 @@
         box-shadow: none;
     }
 
-
+.dropdown-menu.show {
+    display: contents;
+}
 .dropdown-toggle {
         font-size: 25px;
         font-weight: bold;
         font-family: 'IBM Plex Sans KR', bold;
-
+        color: black;
     }
+
 .offcanvas-backdrop fade show:focus{
     display: none;
 }
@@ -140,6 +143,10 @@
     display: inline-block;
 }
 
+.row{
+    margin-bottom: 2%;
+    padding: 1%;
+}
 .offcanvas-backdrop {
     position: fixed;
     top: 0;
@@ -160,42 +167,12 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid d-flex justify-content-end ">
             <ul class="nav nav-tabs justify-content-center" style=" width: 100%; margin-left: 10%; margin-right: 10%">
-                <li class="navbar-toggler"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style=" margin-bottom: 1%; border: none; margin-right: auto; margin-left: auto">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
-                        CONTACTS
-                    </a>
-                </li>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                  <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Contacts Search</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="width: 30px; height: 30px" aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body">
-                    <form class="form-inline" style="width: 100%; display: inline-flex; justify-content: center; text-align: center;">
-                        <input type="text" id="searchInput" class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 90%; border:none; outline: none; border-radius: 0rem; border-bottom: 2px solid darkgreen;">
-                            <p class="my-2 my-sm-0" type="" style="border: none; color: black;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 20 20" style="color: darkgreen">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                </svg>
-                            </p>                    <ul id="postList" class="search-post" style="width: 100%; padding: 3%;">
-                          {% for com in post_con %}
-                              <li style="border-bottom: black dashed 2px; margin-bottom: 2%"><a href="#">{{ com.location }}</a><br>
-                                  <a href="#">{{ com.department }}</a><br>
-                                  <a href="#">{{ com.name }}</a><br>
-                                  <a href="#">{{ com.contact }}</a></br>
-                                  <p style="font-size: 15px">{{com.task}}</p></a>
-                              </li>
-                          {% endfor %}
-                        </ul>
-                    </form>
-                  </div>
-                </div>
                 <li class="nav-item dropdown" style="text-align: center; border: none; display: inline-flex;  margin-left: auto; margin-right: auto;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
                         3D MAP
                     </a>
-                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center; border-radius: 60rem; border: black solid 2px;">
-                        <div class="row" style="margin-left: auto; margin-right: auto">
+                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center; border-radius: 0rem; border: black solid 2px;">
+                        <div class="row" style="margin-left: auto; margin-right: auto;">
                             <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
                             <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
                             <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
@@ -222,6 +199,48 @@
                         </div>
                     </ul>
                 </li>
+
+                <li class="navbar-toggler"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style=" margin-bottom: 1%; border: none; margin-right: auto; margin-left: auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-flex;">
+                        CONTACTS
+                    </a>
+                </li>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Contacts Search</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" style="width: 30px; height: 30px" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <form class="form-inline" style="width: 100%; display: inline-flex; justify-content: center; text-align: center;">
+                        <input type="text" id="searchInput" class="form-control" type="search" placeholder="검색어를 입력하세요." aria-label="Search" style="width: 90%; border:none; outline: none; border-radius: 0rem; border-bottom: 2px solid darkgreen;">
+                            <p class="my-2 my-sm-0" type="" style="border: none; color: black;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 20 20" style="color: darkgreen">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </p>                    <ul id="postList" class="search-post" style="width: 100%; padding: 3%;">
+                          {% for com in post_con %}
+                              <li style="border-bottom: black dashed 2px; margin-bottom: 2%">
+                                  {% if com.location %}
+                                    <a href="#">{{ com.location }}</a><br>
+                                  {% endif %}
+                                  {% if  com.department %}
+                                    <a href="#">{{ com.department }}</a><br>
+                                  {% endif %}
+                                  {% if  com.name %}
+                                    <a href="#">{{ com.name }}</a><br>
+                                  {% endif %}
+                                  {% if  com.contact %}
+                                    <a href="#">{{ com.contact }}</a><br>
+                                  {% endif %}
+                                  {% if com.task %}
+                                  <p style="font-size: 15px">{{com.task}}</p></a>
+                                  {% endif %}
+                              </li>
+                          {% endfor %}
+                        </ul>
+                    </form>
+                  </div>
+                </div>
 
                 <li class="nav-item dropdown" style="margin-left: auto; margin-right: auto; text-align: center; border: none; display: inline-flex">
 

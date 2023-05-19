@@ -27,10 +27,10 @@ class Unimaze_Post(models.Model):
 class Univ_Contacts(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     department = models.CharField(max_length=20)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, null=True)
     task = models.CharField(max_length=200, null=True)
     contact = models.CharField(max_length=20, default='042-280' )
-    location = models.CharField(max_length=200, null=True)
+    location = models.CharField(max_length=200, blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(
