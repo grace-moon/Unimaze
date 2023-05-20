@@ -219,10 +219,13 @@
                           {% for com in post_con %}
                               <li style="border-bottom: darkgreen dashed 2px; margin-bottom: 2%">
                                   {% if com.location %}
-                                    <a href="#">{{ com.location }}</a><br>
+                                    <a href="#">{{ com.location }}</a>
                                   {% endif %}
                                   {% if  com.department %}
-                                    <a href="#">{{ com.department }}</a><br>
+                                    <a href="#">{{ com.department }}</a>
+                                  {% endif %}
+                                  {% if  com.position != blank %}
+                                    <p style="font-size: 15px; margin-bottom: 0px" >{{ com.position }}</p>
                                   {% endif %}
                                   {% if  com.name %}
                                     <a href="#">{{ com.name }}</a><br>

@@ -6,8 +6,10 @@ class UnimazePostAdmin(admin.ModelAdmin):
     list_display = ['title', 'text',]
 admin.site.register(Unimaze_Post, UnimazePostAdmin)
 
+
 class UnivContactsAdmin(admin.ModelAdmin):
-    list_display = ['department', 'name', 'task',]
+    list_display = ['id','department', 'name', 'contact', 'position']
+    search_fields = ['department', 'name', 'task', 'contact']
 admin.site.register(Univ_Contacts, UnivContactsAdmin)
 
 

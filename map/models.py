@@ -28,8 +28,11 @@ class Univ_Contacts(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     department = models.CharField(max_length=20)
     name = models.CharField(max_length=20, null=True)
+    position = models.CharField(max_length=20, null=True)
     task = models.CharField(max_length=200, null=True)
     contact = models.CharField(max_length=20, default='042-280' )
+    second_contact = models.CharField(max_length=20, null=True)
+    third_contact = models.CharField(max_length=20, null=True)
     location = models.CharField(max_length=200, blank=True)
     created_date = models.DateTimeField(
             default=timezone.now)
