@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('ready', views.ready, name='ready'),
     path('HRC_map_detail/<int:pk>/', views.HRC_map, name='HRC_map_detail'),
     path('C_L_map_detail/<int:pk>/', views.C_L_map, name='C_L_map_detail'),
     path('C_M_map_detail/<int:pk>/', views.C_M_map, name='C_M_map_detail'),

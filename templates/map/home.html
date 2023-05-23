@@ -45,6 +45,10 @@
     .dropdown-toggle:hover{
         color: #508447;
     }
+    .positions-container {
+        column-count: 2; /* 2단 설정 */
+        column-gap: 20px; /* 단 사이의 간격 설정 */
+    }
 
 .nav-link:focus, .nav-link:hover {
     color: #508447;
@@ -68,7 +72,7 @@
       border: none;
     }
     body{
-        min-width: 900px;
+        min-width: 390px;
         width: 100%;
         margin: 0;
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -180,28 +184,28 @@
                     <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center;">
                         <div class="row" style="margin-left: auto; margin-right: auto;">
                             <li class="col-md-3"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="//">HRC(하모니홀)</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">EduPark</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">공학관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">공학실험관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">기초과학관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">기초과학관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">HRC(하모니홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">HRC(하트홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">EduPark</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">공학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">공학실험관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">국제생활관(3생활관)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">기초과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">기초과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">맥센터(렉처홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">맥센터(메인홀)</a></li>
                             <li class="col-md-3"><a class="dropdown-item" href="/MM_map_detail/24">문무관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">산학협력관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">산학협력관</a></li>
                             <li class="col-md-3"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">응용과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">응용과학관</a></li>
                             <li class="col-md-3"><a class="dropdown-item" href="/HS_map_detail/29">인문사회관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">제2생활관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">제4생활관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">제2생활관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">제4생활관</a></li>
                             <li class="col-md-3"><a class="dropdown-item" href="/JL_map_detail/42">지산도서관</a></li>
                             <li class="col-md-3"><a class="dropdown-item" href="/CH_map_detail/36">창학관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">학생회관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">학생회관</a></li>
                             <li class="col-md-3"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
-                            <li class="col-md-3"><a class="dropdown-item" href="#">혜화문화관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/ready">혜화문화관</a></li>
                         </div>
                     </ul>
                 </li>
@@ -286,7 +290,7 @@
         </div>
     </nav>
     {% block content %}
-        <div id="map" style="width:100%;height:600px;"></div>
+        <div id="map" style="width:100%; height:600px;"></div>
     {% endblock %}
         <script>
         const backdrop = document.querySelector('.offcanvas-backdrop.fade.show');
@@ -349,8 +353,8 @@
         // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
         var positions = [
             {
-                content: '<div style="padding: 5px; width: 600px; font-size:12px;" xmlns="http://www.w3.org/1999/html">' +
-                        '<a href="https://place.map.kakao.com/17561874" style="color: black;font-size: 15px "><b>30주년 기념관</b></a></br>' +
+                content: '<div style=" column-count: 2; break-inside: avoid; padding-bottom: 10px;  padding: 5px; width:100%; font-size:10px;" xmlns="http://www.w3.org/1999/html">' +
+                        '<a href="https://place.map.kakao.com/17561874" style="color: black; font-size: 15px "><b>30주년 기념관</b></a></br>' +
                         '<a href="/TTA_map_detail/1" style="color: orange;">1F</a>' +
                         '<p>우체국, ATM, 경비실, 주차장, 강의실 : 22107, 22108, 22109, 22110, 22111, 22112, 22113</p>'+
                         '<a href="/TTA_map_detail/2" style="color: orange;">2F</a>' +
