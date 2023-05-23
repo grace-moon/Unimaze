@@ -7,7 +7,6 @@
     }
 
     </style>
-
     <div class="post" style="text-align: center;">
         <h2><b>{{ map.building_name }} {{ map.floor }}</b></h2>
         <p><b>{{ map.building_num}} 호관</b>
@@ -25,6 +24,5 @@
     <div style="width: 80%; margin: auto 10% auto 10%;">
         <iframe src="{{ map.get_viewer_url }}" width="100%" height="500px" style="border: none; border-top: solid black 1px; border-bottom: solid black 1px; "></iframe>
     </div>
-
 {% endblock %}
 

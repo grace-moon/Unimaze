@@ -48,6 +48,7 @@
 
 .nav-link:focus, .nav-link:hover {
     color: #508447;
+
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -55,8 +56,9 @@
     color: #b1293e;
     background-color: #fff;
 
-
 }
+
+
     .dropdown-item:hover {
         font-weight: bold;
         background: none;
@@ -67,7 +69,7 @@
     }
     body{
         min-width: 900px;
-        width: 100%
+        width: 100%;
         margin: 0;
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
         font-size: 1rem;
@@ -81,6 +83,7 @@
     .nav-tabs .nav-link {
         border: none;
         background: none;
+        margin: 0;
         }
 
 
@@ -110,6 +113,13 @@
 .dropdown-menu.show {
     display: contents;
 }
+
+.dropdown.nav-item.show{
+    border-top: black solid;
+    border-bottom: black solid;
+    padding:0 5% 0 0;
+}
+
 .dropdown-toggle {
         font-size: 25px;
         font-weight: bold;
@@ -120,8 +130,6 @@
 .offcanvas-backdrop fade show:focus{
     display: none;
 }
-
-
 
 .search-post a{
     margin : auto 2% auto 2%  ;
@@ -165,35 +173,35 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid d-flex justify-content-end ">
             <ul class="nav nav-tabs justify-content-center" style=" width: 100%; margin-left: 10%; margin-right: 10%">
-                <li class="nav-item dropdown" style="text-align: center; border: none; display: inline-flex;  margin-left: auto; margin-right: auto;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="">
+                <li class="nav-item dropdown" style="text-align: center; display: inline-flex;  margin-left: auto; margin-right: auto; ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none">
                         3D MAP
                     </a>
-                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center; border-radius: 0rem; border: black solid 2px;">
+                    <ul class="dropdown-menu row" aria-labelledby="navbarDropdown1" style="width: 600%; text-align: center;">
                         <div class="row" style="margin-left: auto; margin-right: auto;">
-                            <li class="col-sm-4"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">EduPark</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">공학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">공학실험관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">기초과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">문무관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">산학협력관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">응용과학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">인문사회관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">제2생활관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">제4생활관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">지산도서관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">창학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">학생회관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
-                            <li class="col-sm-4"><a class="dropdown-item" href="#">혜화문화관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/TTA_map_detail/1">30주년 기념관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">HRC(하모니홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">HRC(하트홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">EduPark</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">공학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">공학실험관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">국제생활관(3생활관)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">기초과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">기초과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">맥센터(렉처홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">맥센터(메인홀)</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">문무관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">산학협력관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/FS_map_detail/11">융합과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">응용과학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">인문사회관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">제2생활관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">제4생활관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">지산도서관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">창학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">학생회관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="/OM_map_detail/17">한의학관</a></li>
+                            <li class="col-md-3"><a class="dropdown-item" href="#">혜화문화관</a></li>
                         </div>
                     </ul>
                 </li>
@@ -215,26 +223,30 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 20 20" style="color: darkgreen">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                                 </svg>
-                            </p>                    <ul id="postList" class="search-post" style="width: 100%; padding: 3%;">
+                            </p>
+                        <ul id="postList" class="search-post" style="width: 100%; padding: 3%;">
                           {% for com in post_con %}
                               <li style="border-bottom: darkgreen dashed 2px; margin-bottom: 2%">
                                   {% if com.location %}
-                                    <a href="#">{{ com.location }}</a>
+                                    <a href="#">{{ com.location }}</a><br>
                                   {% endif %}
-                                  {% if  com.department %}
-                                    <a href="#">{{ com.department }}</a>
+                                  {% if com.department %}
+                                    <a href="#">{{ com.department }}</a><br>
                                   {% endif %}
-                                  {% if  com.position != blank %}
+                                  {% if com.major %}
+                                    <a href="#">{{ com.major }}</a><br>
+                                  {% endif %}
+                                  {% if com.position %}
                                     <p style="font-size: 15px; margin-bottom: 0px" >{{ com.position }}</p>
                                   {% endif %}
-                                  {% if  com.name %}
+                                  {% if com.name %}
                                     <a href="#">{{ com.name }}</a><br>
                                   {% endif %}
-                                  {% if  com.contact %}
+                                  {% if com.contact %}
                                     <a href="#">{{ com.contact }}</a><br>
                                   {% endif %}
                                   {% if com.task %}
-                                  <p style="font-size: 15px">{{com.task}}</p></a>
+                                    <p style="font-size: 15px">{{com.task}}</p></a>
                                   {% endif %}
                               </li>
                           {% endfor %}
@@ -315,23 +327,6 @@
       });
     </script>
 
-    <script>
-      const taskContent = document.getElementById('taskContent');
-      const readMoreButton = document.getElementById('readMoreButton');
-      let isContentVisible = false;
-
-      readMoreButton.addEventListener('click', function() {
-        if (isContentVisible) {
-          taskContent.style.display = 'none';
-          readMoreButton.textContent = '담당업무';
-        } else {
-          taskContent.style.display = 'block';
-          readMoreButton.textContent = '접기';
-        }
-
-        isContentVisible = !isContentVisible;
-      });
-    </script>
 
 
 

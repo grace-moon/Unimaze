@@ -14,10 +14,6 @@ def home(request):
     return render(request, '../templates/map/home.html', {'post_map':post_map, 'post_con':post_con})
 
 
-def contacts_detail(request, pk):
-    contract = get_object_or_404(Univ_Contacts, pk=pk)
-    return render(request, '../templates/map/contracts_detail.html', {'contract':contract})
-
 def	HRC_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=0).order_by('published_date')
@@ -129,6 +125,7 @@ def	IAC_map(request, pk):
     vectary_map = get_object_or_404(Unimaze_map,pk=pk)
     map_list = Unimaze_map.objects.filter(building_num=25).order_by('published_date')
     return render(request, '../templates/map/IAC_map_detail.html',{'map':vectary_map, 'list':map_list})
+
 
 
 

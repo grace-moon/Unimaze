@@ -5,7 +5,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('map/map_results', views.map_result, name='map_results'),
     path('map/contacts_results', views.map_result, name='map_results'),
-    path('contact/<int:pk>/', views.contacts_detail, name='contract'),
     path('HRC_map_detail/<int:pk>/', views.HRC_map, name='HRC_map_detail'),
     path('C_L_map_detail/<int:pk>/', views.C_L_map, name='C_L_map_detail'),
     path('C_M_map_detail/<int:pk>/', views.C_M_map, name='C_M_map_detail'),
