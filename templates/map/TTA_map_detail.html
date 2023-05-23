@@ -14,7 +14,9 @@
     <div class="post-container">
         {% for map in list %}
             <div class="post" style="margin-left: 1%; margin-right: 1%">
-                <h5><a href="{% url 'TTA_map_detail' pk=map.pk %}" style="color: #508447;" ><b>{{ map.floor }}</b></a></h5>
+                <h5>
+                    <a href="{% url 'TTA_map_detail' pk=map.pk %}" style="color: #508447;" ><b>{{ map.floor }}</b></a></h5>
+                </h5>
             </div>
         {% endfor %}
     </div>
