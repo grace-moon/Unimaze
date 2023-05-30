@@ -351,117 +351,116 @@
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
         // 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다
-        var positions = [
-            {
-                content: '<div style=" column-count: 2; break-inside: avoid; padding-bottom: 10px;  padding: 5px; width:100%; font-size:10px;" xmlns="http://www.w3.org/1999/html">' +
-                        '<a href="https://place.map.kakao.com/17561874" style="color: black; font-size: 15px "><b>30주년 기념관</b></a></br>' +
-                        '<a href="/TTA_map_detail/1" style="color: orange;">1F</a>' +
-                        '<p>우체국, ATM, 경비실, 주차장, 강의실 : 22107, 22108, 22109, 22110, 22111, 22112, 22113</p>'+
-                        '<a href="/TTA_map_detail/2" style="color: orange;">2F</a>' +
-                        '<p>CafeN, 휴게실, 인쇄실(22216), 강의실 : 22219, 22220, 22221, 22222, 22223, 22224, 22225, 22226, 22314</p>' +
-                        '<a href="/TTA_map_detail/3" style="color: orange;">3F</a>' +
-                        '<p>혜화문화관 연결통로, 지산도서관 연결통로, 휴게실, 시설팀(22313), 강의실 : 22314, 22315, 22316, 22317, 22318, 22319, 22320</p>' +
-                        '<a href="/TTA_map_detail/4" style="color: orange;">4F</a>' +
-                        '<p> 학생문화팀(22406), 학생지원팀(22412), 강의실 : 22413, 22414, 22416, 22417, 22418, 22419, 22420, 22421</p>' +
-                        '<a href="/TTA_map_detail/5" style="color: orange;">5F</a>' +
-                        '<p>하나컨벤션홀</p>' +
-                        '<a href="/TTA_map_detail/6" style="color: orange;">6F</a>' +
-                        '<p>통역실, 관계자 외 출입금지 구역</p>' +
-                        '<a href="/TTA_map_detail/7" style="color: orange;">7F</a>' +
-                        '<p>관계자 외 출입금지 구역</p>' +
-                        '<a hre f="/TTA_map_detail/8" style="color: orange;">8F</a>' +
-                        '<p>관계자 외 출입금지 구역</p>' +
-                        '<a href="/TTA_map_detail/9" style="color: orange;">9F</a>' +
-                        '<p>총장실, 부총장실, 이사장실, 비서실</p>' +
-                        '<a href="/TTA_map_detail/10" style="color: orange;">10F</a>' +
-                        '<p>총회의실, 소회의실</p>' +
-                    '</div>',
-                latlng: new kakao.maps.LatLng(36.33611566110516,127.46002541375002)
-            },
-            {
-                content: '<div>공학관</div>',
-                latlng: new kakao.maps.LatLng(36.33332417963411,127.46180220114597)
-            },
-            {
-                content: '<div>공학실험관</div>',
-                latlng: new kakao.maps.LatLng(36.333312597823536,  127.46130092780878)
-            },
-            {
-                content: '<div>국제생활관(제3생활관)</div>',
-                latlng: new kakao.maps.LatLng(36.33780715279762, 127.45838685788743)
-            },
-            {
-                content: '<div>기초과학관</div>',
-                latlng: new kakao.maps.LatLng(36.33284846039782, 127.4613093292189)
-            },
-            {
-                content: '<div>맥센터(렉처홀)</div>',
-                latlng: new kakao.maps.LatLng(36.335998841391, 127.4622746575982)
-            },
-            {
-                content: '<div>맥센터(메인홀)</div>',
-                latlng: new kakao.maps.LatLng(36.33596007906786, 127.46297613924514)
-            },
-            {
-                content: '<div>문무관</div>',
-                latlng: new kakao.maps.LatLng(36.336016545432535, 127.4576746549923)
-            },
-            {
-                content: '<div>산학협력관</div>',
-                latlng: new kakao.maps.LatLng(36.334614695843946, 127.45781124944808)
-            },
-            {
-                content: '<div>융합과학관</div>',
-                latlng: new kakao.maps.LatLng(36.33522662733902, 127.45803759343447)
-            },
-            {
-                content: '<div>응용과학관</div>',
-                latlng: new kakao.maps.LatLng(36.33381080285414, 127.46180507331417)
-            },
-            {
-                content: '<div>인문사회관</div>',
-                latlng: new kakao.maps.LatLng(36.336651239021435, 127.45901497183533)
-            },
-            {
-                content: '<div>입학홍보관</div>',
-                latlng: new kakao.maps.LatLng(36.33451875078942, 127.46283395341769)
-            },
-            {
-                content: '<div>제5생활관-HRC(하모니홀)</div>',
-                latlng: new kakao.maps.LatLng(36.3337343586822,127.46292955487455)
-            },
+            var positions = [
                 {
-                content: '<div>제5생활관-HRC(하트홀)</div>',
-                latlng: new kakao.maps.LatLng(36.33323868085334, 127.4629377600259)
-            },       {
-                content: '<div>제2생활관</div>',
-                latlng: new kakao.maps.LatLng(36.338237184283706,127.45904655453961)
-            },       {
-                content: '<div>제4생활관</div>',
-                latlng: new kakao.maps.LatLng(36.33706017728725, 127.45812629733736)
-            },       {
-                content: '<div>지산도서관</div>',
-                latlng: new kakao.maps.LatLng(36.33639939410993,127.46123002158983)
-            },       {
-                content: '<div>창학관</div>',
-                latlng: new kakao.maps.LatLng(36.334901973681326, 127.46161102785686)
-            },
-            {
-                content: '<div>학생회관</div>',
-                latlng: new kakao.maps.LatLng(36.334298716648476, 127.46147381230575)
-            },
-            {
-                content: '<div>한의학관</div>',
-                latlng: new kakao.maps.LatLng(36.33538584456335, 127.45881819852357)
-            },    {
-                content: '<div>혜화문화관</div>',
-                latlng: new kakao.maps.LatLng(36.33707036966329,127.46016468871912)
-            },
-            {
-                content: '<div>The 4th Edu-Park</div>',
-                latlng: new kakao.maps.LatLng(36.33623064580255, 127.45824396106813)
-            }
-        ];
+                    content: '<div style=" column-count: 2; break-inside: avoid; padding-bottom: 10px;  padding: 5px; width:100%; font-size:10px;" xmlns="http://www.w3.org/1999/html">' +
+                            '<a href="https://place.map.kakao.com/17561874" style="color: black; font-size: 15px "><b>30주년 기념관</b></a></br>' +
+                            '<a href="/TTA_map_detail/1" style="color: orange;">1F</a>' +
+                            '<p>우체국, ATM, 경비실, 주차장, 강의실 : 22107, 22108, 22109, 22110, 22111, 22112, 22113</p>'+
+                            '<a href="/TTA_map_detail/2" style="color: orange;">2F</a>' +
+                            '<p>CafeN, 휴게실, 인쇄실(22216), 강의실 : 22219, 22220, 22221, 22222, 22223, 22224, 22225, 22226, 22314</p>' +
+                            '<a href="/TTA_map_detail/3" style="color: orange;">3F</a>' +
+                            '<p>혜화문화관 연결통로, 지산도서관 연결통로, 휴게실, 시설팀(22313), 강의실 : 22314, 22315, 22316, 22317, 22318, 22319, 22320</p>' +
+                            '<a href="/TTA_map_detail/4" style="color: orange;">4F</a>' +
+                            '<p> 학생문화팀(22406), 학생지원팀(22412), 강의실 : 22413, 22414, 22416, 22417, 22418, 22419, 22420, 22421</p>' +
+                            '<a href="/TTA_map_detail/5" style="color: orange;">5F</a>' +
+                            '<p>하나컨벤션홀</p>' +
+                            '<a href="/TTA_map_detail/6" style="color: orange;">6F</a>' +
+                            '<p>통역실, 관계자 외 출입금지 구역</p>' +
+                            '<a href="/TTA_map_detail/7" style="color: orange;">7F</a>' +
+                            '<p>관계자 외 출입금지 구역</p>' +
+                            '<a hre f="/TTA_map_detail/8" style="color: orange;">8F</a>' +
+                            '<p>관계자 외 출입금지 구역</p>' +
+                            '<a href="/TTA_map_detail/9" style="color: orange;">9F</a>' +
+                            '<p>총장실, 부총장실, 이사장실, 비서실</p>' +
+                            '<a href="/TTA_map_detail/10" style="color: orange;">10F</a>' +
+                            '<p>총회의실, 소회의실</p>' +
+                        '</div>',
+                    latlng: new kakao.maps.LatLng(36.33611566110516,127.46002541375002)
+                },
+                {
+                    latlng: new kakao.maps.LatLng(36.33332417963411,127.46180220114597)
+                },
+                {
+                    content: '<div>공학실험관</div>',
+                    latlng: new kakao.maps.LatLng(36.333312597823536,  127.46130092780878)
+                },
+                {
+                    content: '<div>국제생활관(제3생활관)</div>',
+                    latlng: new kakao.maps.LatLng(36.33780715279762, 127.45838685788743)
+                },
+                {
+                    content: '<div>기초과학관</div>',
+                    latlng: new kakao.maps.LatLng(36.33284846039782, 127.4613093292189)
+                },
+                {
+                    content: '<div>맥센터(렉처홀)</div>',
+                    latlng: new kakao.maps.LatLng(36.335998841391, 127.4622746575982)
+                },
+                {
+                    content: '<div>맥센터(메인홀)</div>',
+                    latlng: new kakao.maps.LatLng(36.33596007906786, 127.46297613924514)
+                },
+                {
+                    content: '<div>문무관</div>',
+                    latlng: new kakao.maps.LatLng(36.336016545432535, 127.4576746549923)
+                },
+                {
+                    content: '<div>산학협력관</div>',
+                    latlng: new kakao.maps.LatLng(36.334614695843946, 127.45781124944808)
+                },
+                {
+                    content: '<div>융합과학관</div>',
+                    latlng: new kakao.maps.LatLng(36.33522662733902, 127.45803759343447)
+                },
+                {
+                    content: '<div>응용과학관</div>',
+                    latlng: new kakao.maps.LatLng(36.33381080285414, 127.46180507331417)
+                },
+                {
+                    content: '<div>인문사회관</div>',
+                    latlng: new kakao.maps.LatLng(36.336651239021435, 127.45901497183533)
+                },
+                {
+                    content: '<div>입학홍보관</div>',
+                    latlng: new kakao.maps.LatLng(36.33451875078942, 127.46283395341769)
+                },
+                {
+                    content: '<div>제5생활관-HRC(하모니홀)</div>',
+                    latlng: new kakao.maps.LatLng(36.3337343586822,127.46292955487455)
+                },
+                    {
+                    content: '<div>제5생활관-HRC(하트홀)</div>',
+                    latlng: new kakao.maps.LatLng(36.33323868085334, 127.4629377600259)
+                },       {
+                    content: '<div>제2생활관</div>',
+                    latlng: new kakao.maps.LatLng(36.338237184283706,127.45904655453961)
+                },       {
+                    content: '<div>제4생활관</div>',
+                    latlng: new kakao.maps.LatLng(36.33706017728725, 127.45812629733736)
+                },       {
+                    content: '<div>지산도서관</div>',
+                    latlng: new kakao.maps.LatLng(36.33639939410993,127.46123002158983)
+                },       {
+                    content: '<div>창학관</div>',
+                    latlng: new kakao.maps.LatLng(36.334901973681326, 127.46161102785686)
+                },
+                {
+                    content: '<div>학생회관</div>',
+                    latlng: new kakao.maps.LatLng(36.334298716648476, 127.46147381230575)
+                },
+                {
+                    content: '<div>한의학관</div>',
+                    latlng: new kakao.maps.LatLng(36.33538584456335, 127.45881819852357)
+                },    {
+                    content: '<div>혜화문화관</div>',
+                    latlng: new kakao.maps.LatLng(36.33707036966329,127.46016468871912)
+                },
+                {
+                    content: '<div>The 4th Edu-Park</div>',
+                    latlng: new kakao.maps.LatLng(36.33623064580255, 127.45824396106813)
+                }
+            ];
 
         var infowindows = [];
 
