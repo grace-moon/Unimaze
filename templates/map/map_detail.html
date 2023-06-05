@@ -11,14 +11,203 @@
         <h2><b>{{ map.building_name }} {{ map.floor }}</b></h2>
         <p><b>{{ map.building_num }} 호관</b></p>
     <div class="post-container">
+             {% if map.building_num == 1 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'ch_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 2 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'as_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 3 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'sh_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 4 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'en_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 6 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'en_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 7 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'bs_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 8 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'ep_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 10 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'jl_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 11 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'ee_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+                 {% if map.building_num == 12 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'om_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 14 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'ad_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
 
-        {% for map in list %}
-            <div class="post" style="margin-left: 1%; margin-right: 1%">
-                <h5>
-                    <a href="{% url 'map_detail' pk=map.pk %}" style="color: #508447;"><b>{{ map.floor }}</b></a>
-                </h5>
-            </div>
-        {% endfor %}
+             {% if map.building_num == 15 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'hc_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+             {% if map.building_num == 16 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'tsd_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_name == 'MAC 렉처홀' %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'mac_l_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_name == 'MAC 메인홀' %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'mac_l_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 19 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'mm_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 22 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'tta_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+                 {% if map.building_num == 23 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'tfd_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+             {% if map.building_num == 24 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'fs_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+             {% if map.building_num == 23 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'fs_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+             {% if map.building_num == 24 %}
+                {% for map_item in list %}
+                    <div class="post" style="margin-left: 1%; margin-right: 1%">
+                        <h5>
+                            <a href="{% url 'fs_map_detail' pk=map_item.pk %}" style="color: #508447;"><b>{{ map_item.floor }}</b></a>
+                        </h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+
+
+
     </div>
     </div>
     <div style="width: 80%; margin: auto 10% auto 10%;">

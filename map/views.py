@@ -28,3 +28,4 @@ def map_detail(request, building_num, pk,):
     post_post = Unimaze_Post.objects.all()
     template_name = '../templates/map/map_detail.html'
     return render(request, template_name, {'map':vectary_map, 'list':map_list, 'post_map':post_map, 'post_con':post_con, 'post_post':post_post, })
+
